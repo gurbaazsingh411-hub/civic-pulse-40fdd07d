@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        civic: {
+          navy: "hsl(var(--civic-navy))",
+          "navy-light": "hsl(var(--civic-navy-light))",
+          teal: "hsl(var(--civic-teal))",
+          "teal-light": "hsl(var(--civic-teal-light))",
+          amber: "hsl(var(--civic-amber))",
+          "amber-light": "hsl(var(--civic-amber-light))",
+          green: "hsl(var(--civic-green))",
+          "green-light": "hsl(var(--civic-green-light))",
+          red: "hsl(var(--civic-red))",
+          "red-light": "hsl(var(--civic-red-light))",
+          slate: "hsl(var(--civic-slate))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +82,30 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 20px hsl(var(--civic-teal) / 0.3)" },
+          "50%": { opacity: "0.8", boxShadow: "0 0 40px hsl(var(--civic-teal) / 0.5)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "hero-pattern": "radial-gradient(circle at 20% 50%, hsl(var(--civic-teal) / 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--civic-navy) / 0.1) 0%, transparent 40%)",
       },
     },
   },
